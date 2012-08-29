@@ -191,10 +191,6 @@
     <None Include="AsmPaths.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="ASMWSTester.exe.options">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="ASMWSTester_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cow.ico">

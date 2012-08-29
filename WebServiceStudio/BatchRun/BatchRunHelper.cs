@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Xml;
-using NUnit.Framework;
+
 
 namespace IBS.Utilities.ASMWSTester.BatchRun
 {
@@ -257,23 +257,7 @@ namespace IBS.Utilities.ASMWSTester.BatchRun
                     String.Format("Assert:type {0},expected {1},actual {2},xpath {3},attribute {4}", assertType,
                                   expected, actualvalue, actual, actualattribute));
 
-                switch (assertType)
-                {
-                    case "AreEqual":
-                        Assert.AreEqual(expected, actualvalue, message);
-                        break;
-                    case "AreNotEqual":
-                        Assert.AreNotEqual(expected, actualvalue, message);
-                        break;
-                    case "Greater":
-                        Assert.Greater(actualvalue, expected, message);
-                        break;
-                    case "Less":
-                        Assert.Less(actualvalue, expected, message);
-                        break;
-                    default:
-                        throw new Exception(String.Format("Not support assert type {0}", assertType));
-                }
+              
             }
             else
             {
