@@ -1,0 +1,18 @@
+Login:[[Login]]
+
+Database:[[Database]]
+
+Steps to reproduce: 
+
+Use Web Service Studio with
+URL:[[EndPointUri]]
+Call [[MethodName]] method with parameter as the only parameter (see S1 below).
+
+Expected result: 
+
+Actual result: [[ActualResult]]
+
+
+
+S1
+[[InputParameter]]

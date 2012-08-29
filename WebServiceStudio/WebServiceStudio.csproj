@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8278726D-8339-4711-B13A-9E2579591781}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IBS.Utilities.ASMWSTester</RootNamespace>
+    <AssemblyName>ASMWSTester</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ApplicationIcon>Cow.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>3A58056C8E1DDD442D3A675CDE1983D2C73C2901</ManifestCertificateThumbprint>
+    <ManifestKeyFile>ASMWSTester_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <PublishUrl>\\ibs-fs\Applications\All\IBSDevTools\ClickOnceTools\ASMWSTester\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>1.3.0.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArrayProperty.cs" />
+    <Compile Include="BatchRun\BatchRunHelper.cs" />
+    <Compile Include="BatchRun\MainFormFactory.cs" />
+    <Compile Include="FindForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindForm.Designer.cs">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherProperties.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="BatchRun\OuterRunHelper.cs" />
+    <Compile Include="ClassProperty.cs" />
+    <Compile Include="AuthenticationHeaderProperties.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="CustomHandler.cs" />
+    <Compile Include="DataSetEditor.cs" />
+    <Compile Include="DynamicConverter.cs" />
+    <Compile Include="DynamicEditor.cs" />
+    <Compile Include="Http\HttpHelper.cs" />
+    <Compile Include="Http\IUri.cs" />
+    <Compile Include="Http\IUriResolver.cs" />
+    <Compile Include="Http\ModuleUri.cs" />
+    <Compile Include="Http\ModuleUriCollection.cs" />
+    <Compile Include="Http\Uri.cs" />
+    <Compile Include="Http\UriResolver.cs" />
+    <Compile Include="Http\VersionUri.cs" />
+    <Compile Include="Http\VersionUriCollection.cs" />
+    <Compile Include="IAdditionalProperties.cs" />
+    <Compile Include="InvokeProperties.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="ListStandardValues.cs" />
+    <Compile Include="BatchUpdateAssemblyPropetties.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageTracer.cs" />
+    <Compile Include="MessageType.cs" />
+    <Compile Include="MethodProperty.cs" />
+    <Compile Include="NoCloseMemoryStream.cs" />
+    <Compile Include="NullablePrimitiveProperty.cs" />
+    <Compile Include="OptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrimitiveProperty.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Protocol.cs" />
+    <Compile Include="ProxyProperties.cs" />
+    <Compile Include="ProxyProperty.cs" />
+    <Compile Include="RequestProperties.cs" />
+    <Compile Include="Script.cs" />
+    <Compile Include="SearchDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerHistoryProperties.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="TreeNodeProperty.cs" />
+    <Compile Include="UiProperties.cs" />
+    <Compile Include="ValueFieldsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValueFieldsForm.Designer.cs">
+      <DependentUpon>ValueFieldsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wsdl.cs" />
+    <Compile Include="WsdlProperties.cs" />
+    <Compile Include="WSSWebRequest.cs" />
+    <Compile Include="WSSWebRequestCreate.cs" />
+    <Compile Include="WSSWebResponse.cs" />
+    <Compile Include="XmlAttributeProperty.cs" />
+    <Compile Include="BatchRun\ConfigNode\XmlConfigNodeBase.cs" />
+    <Compile Include="BatchRun\BatchRunCongifFileHelper.cs" />
+    <Compile Include="BatchRun\ConfigNode\ModuleConfigNode.cs" />
+    <Compile Include="BatchRun\ConfigNode\ParameterConfigNode.cs" />
+    <Compile Include="BatchRun\ConfigNode\RunConfigNode.cs" />
+    <Compile Include="BatchRun\ConfigNode\SetValueFieldConfigNode.cs" />
+    <Compile Include="BatchRun\ConfigNode\TestConfigNode.cs" />
+    <Compile Include="BatchRun\ConfigNode\VauleFieldConfigNode.cs" />
+    <Compile Include="XmlConfig\XmlCongifManager.cs" />
+    <Compile Include="XmlElementProperty.cs" />
+    <Compile Include="XmlTreeNode.cs" />
+    <Compile Include="XmlTreeWriter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FindForm.resx">
+      <DependentUpon>FindForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValueFieldsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ValueFieldsForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AsmIssueTemplate.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AsmPaths.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ASMWSTester.exe.options">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ASMWSTester_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cow.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\log4net.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\nunit.framework.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
