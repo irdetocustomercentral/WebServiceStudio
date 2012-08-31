@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 	//WebServiceStudio Application to test WCF web services.
 
 	//Copyright (C) 2012  Irdeto Customer Care And Billing
@@ -22,6 +23,14 @@
 
 
 
+=======
+	//For licensing details please see the following link
+	//http://webservicestudio.codeplex.com/license
+
+	//8-20-2012 Web service Studio has been modified to understand more complex input types
+	//such as Irdeto's Customer Care input type of Base Query Request. 
+	
+>>>>>>> SandBox
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
