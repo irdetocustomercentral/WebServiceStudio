@@ -199,7 +199,14 @@ namespace IBS.Utilities.ASMWSTester
 
         public void buttonGet_Click(object sender, EventArgs e)
         {
-            GetAssembly(false);
+            try
+            {
+                GetAssembly(false);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.ToString(), Ex.Message);
+            }
         }
 
         private void GetAssembly(bool useThread)
