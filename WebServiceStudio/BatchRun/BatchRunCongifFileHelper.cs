@@ -13,10 +13,10 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
-using IBS.Utilities.ASMWSTester.BatchRun.ConfigNode;
-using IBS.Utilities.ASMWSTester.XmlConfig;
+using WebServiceStudio.BatchRun.ConfigNode;
+using WebServiceStudio.XmlConfig;
 
-namespace IBS.Utilities.ASMWSTester.BatchRun
+namespace WebServiceStudio.BatchRun
 {
     public static class BatchRunCongifFileHelper
     {

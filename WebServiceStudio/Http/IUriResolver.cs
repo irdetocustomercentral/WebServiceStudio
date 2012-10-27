@@ -6,7 +6,7 @@
 	//such as Irdeto's Customer Care input type of Base Query Request. 
 	
 
-namespace IBS.Utilities.ASMWSTester.Http
+namespace WebServiceStudio.Http
 {
     internal interface IUriResolver
     {

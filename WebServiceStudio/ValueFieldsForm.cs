@@ -8,10 +8,10 @@
 
 using System;
 using System.Windows.Forms;
-using IBS.Utilities.ASMWSTester.BatchRun;
-using IBS.Utilities.ASMWSTester.BatchRun.ConfigNode;
+using WebServiceStudio.BatchRun;
+using WebServiceStudio.BatchRun.ConfigNode;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public partial class ValueFieldsForm : Form
     {

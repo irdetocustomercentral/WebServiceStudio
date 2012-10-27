@@ -13,7 +13,7 @@ using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing.Design;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public class DynamicEditor : UITypeEditor
     {
@@ -21,7 +21,7 @@ namespace IBS.Utilities.ASMWSTester
         {
             editorTable = null;
             typeNotFoundMessage =
-                "ProxyPropertiesType {0} specified in IBS.Utilities.ASMWSTester.exe.options is not found";
+                "ProxyPropertiesType {0} specified in WebServiceStudio.exe.options is not found";
             editorTable = new Hashtable();
             editorTable[typeof (object)] = Activator.CreateInstance(typeof (UITypeEditor));
             editorTable[typeof (DataSet)] = Activator.CreateInstance(typeof (DataSetEditor));

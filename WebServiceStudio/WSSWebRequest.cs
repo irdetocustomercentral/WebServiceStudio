@@ -10,7 +10,7 @@ using System;
 using System.IO;
 using System.Net;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public class WSSWebRequest : WebRequest
     {

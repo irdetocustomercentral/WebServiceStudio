@@ -12,7 +12,7 @@ using System.Drawing;
 using System.Drawing.Design;
 using System.Windows.Forms;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public class DataSetEditor : UITypeEditor
     {

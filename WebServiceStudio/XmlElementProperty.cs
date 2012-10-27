@@ -10,7 +10,7 @@ using System;
 using System.Collections;
 using System.Xml;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     internal class XmlElementProperty : ClassProperty
     {

@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Xml;
 
 
-namespace IBS.Utilities.ASMWSTester.BatchRun
+namespace WebServiceStudio.BatchRun
 {
     public static class BatchRunHelper
     {

@@ -9,7 +9,7 @@
 using System;
 using System.Net;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public class WSSWebRequestCreate : IWebRequestCreate
     {

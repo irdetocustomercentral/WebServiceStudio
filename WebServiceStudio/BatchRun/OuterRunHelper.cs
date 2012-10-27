@@ -11,9 +11,9 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Xml;
-using IBS.Utilities.ASMWSTester.XmlConfig;
+using WebServiceStudio.XmlConfig;
 
-namespace IBS.Utilities.ASMWSTester.BatchRun
+namespace WebServiceStudio.BatchRun
 {
     /// <summary>
     /// 

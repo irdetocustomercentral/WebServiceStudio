@@ -8,8 +8,8 @@
     <ProjectGuid>{8278726D-8339-4711-B13A-9E2579591781}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IBS.Utilities.ASMWSTester</RootNamespace>
-    <AssemblyName>ASMWSTester</AssemblyName>
+    <RootNamespace>WebServiceStudio</RootNamespace>
+    <AssemblyName>WebServiceStudio</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>

@@ -14,7 +14,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public class XmlTreeWriter : XmlWriter
     {

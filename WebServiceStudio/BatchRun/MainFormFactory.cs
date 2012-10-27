@@ -9,10 +9,10 @@
 using System;
 using System.Collections.Generic;
 //using ASMWSTester.BatchRun;
-using IBS.Utilities.ASMWSTester.BatchRun;
-using IBS.Utilities.ASMWSTester;
+using WebServiceStudio.BatchRun;
+using WebServiceStudio;
 
-namespace IBS.Utilities.ASMWSTester.BatchRun
+namespace WebServiceStudio.BatchRun
 {
     public static class MainFormFactory
     {

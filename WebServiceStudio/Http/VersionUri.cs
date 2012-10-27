@@ -8,7 +8,7 @@
 
 using System.Collections.Generic;
 
-namespace IBS.Utilities.ASMWSTester.Http
+namespace WebServiceStudio.Http
 {
     public class VersionUri : UriBase
     {

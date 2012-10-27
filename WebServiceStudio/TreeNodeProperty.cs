@@ -16,7 +16,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     internal class TreeNodeProperty
     {

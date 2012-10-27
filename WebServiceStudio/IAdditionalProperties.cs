@@ -8,7 +8,7 @@
 
 using System.Web.Services.Protocols;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public interface IAdditionalProperties
     {

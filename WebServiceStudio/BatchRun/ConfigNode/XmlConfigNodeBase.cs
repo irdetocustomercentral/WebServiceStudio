@@ -10,7 +10,7 @@ using System.Collections;
 using System.Reflection;
 using System.Xml;
 
-namespace IBS.Utilities.ASMWSTester.BatchRun.ConfigNode
+namespace WebServiceStudio.BatchRun.ConfigNode
 {
     public abstract class XmlConfigNodeBase
     {

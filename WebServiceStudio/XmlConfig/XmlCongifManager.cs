@@ -13,7 +13,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace IBS.Utilities.ASMWSTester.XmlConfig
+namespace WebServiceStudio.XmlConfig
 {
     //TODO refactory it
     public static class XmlCongifManager
@@ -28,7 +28,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
 
                 switch (nodeType)
                 {
-                    case "IBS.Utilities.ASMWSTester.MethodProperty":
+                    case "WebServiceStudio.MethodProperty":
                         node1 = xmlDocument.CreateElement(treeNode.Text);
 
                         if (treeNode.Text != null)
@@ -36,7 +36,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
                             xmlDocument.AppendChild(node1);
                         }
                         break;
-                    case "IBS.Utilities.ASMWSTester.ClassProperty":
+                    case "WebServiceStudio.ClassProperty":
                         node1 = xmlDocument.CreateElement(((ClassProperty) treeNode.Tag).Name);
 
                         if (((ClassProperty) treeNode.Tag).ReadChildren() == null)
@@ -46,7 +46,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
 
                         xmlNode.AppendChild(node1);
                         break;
-                    case "IBS.Utilities.ASMWSTester.PrimitiveProperty":
+                    case "WebServiceStudio.PrimitiveProperty":
                         node1 = xmlDocument.CreateElement(((PrimitiveProperty) treeNode.Tag).Name);
 
                         if (((PrimitiveProperty) treeNode.Tag).ReadChildren() != null)
@@ -61,7 +61,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
 
                         xmlNode.AppendChild(node1);
                         break;
-                    case "IBS.Utilities.ASMWSTester.NullablePrimitiveProperty":
+                    case "WebServiceStudio.NullablePrimitiveProperty":
                         node1 = xmlDocument.CreateElement(((NullablePrimitiveProperty) treeNode.Tag).Name);
 
                         if (((NullablePrimitiveProperty) treeNode.Tag).ReadChildren() == null)
@@ -82,7 +82,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
 
                         xmlNode.AppendChild(node1);
                         break;
-                    case "IBS.Utilities.ASMWSTester.ArrayProperty":
+                    case "WebServiceStudio.ArrayProperty":
                         node1 = xmlDocument.CreateElement(((ArrayProperty) treeNode.Tag).Name);
 
                         if (((ArrayProperty) treeNode.Tag).ReadChildren() == null)
@@ -124,12 +124,12 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
                 XmlNode currentNode = null;
                 switch (nodeType)
                 {
-                    case "IBS.Utilities.ASMWSTester.MethodProperty":
+                    case "WebServiceStudio.MethodProperty":
                         currentxpath += ((MethodProperty) treeNode.Tag).Name;
                         //((MethodProperty)treeNode.Tag). = xmlDocument.SelectSingleNode(currentxpath);
 
                         break;
-                    case "IBS.Utilities.ASMWSTester.ClassProperty":
+                    case "WebServiceStudio.ClassProperty":
                         currentxpath += "/" + ((ClassProperty) treeNode.Tag).Name;
 
                         currentNode = xmlDocument.SelectSingleNode(currentxpath);
@@ -184,7 +184,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
                             }
                         }
                         break;
-                    case "IBS.Utilities.ASMWSTester.PrimitiveProperty":
+                    case "WebServiceStudio.PrimitiveProperty":
                         currentxpath += "/" + ((PrimitiveProperty) treeNode.Tag).Name;
 
                         currentNode = xmlDocument.SelectSingleNode(currentxpath);
@@ -211,7 +211,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
                         }
 
                         break;
-                    case "IBS.Utilities.ASMWSTester.NullablePrimitiveProperty":
+                    case "WebServiceStudio.NullablePrimitiveProperty":
                         currentxpath += "/" + ((NullablePrimitiveProperty) treeNode.Tag).Name;
 
                         currentNode = xmlDocument.SelectSingleNode(currentxpath);
@@ -255,7 +255,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
                             //}
                         }
                         break;
-                    case "IBS.Utilities.ASMWSTester.ArrayProperty":
+                    case "WebServiceStudio.ArrayProperty":
                         currentxpath += "/" + ((ArrayProperty) treeNode.Tag).Name;
                         currentNode = xmlDocument.SelectSingleNode(currentxpath);
 
@@ -291,7 +291,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
             if (treeNode.Tag != null)
             {
                 string nodeType = treeNode.Tag.GetType().ToString();
-                if (nodeType == "IBS.Utilities.ASMWSTester.ClassProperty")
+                if (nodeType == "WebServiceStudio.ClassProperty")
                 {
                     ClassProperty classProperty = treeNode.Tag as ClassProperty;
 
@@ -304,7 +304,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
                     }
                 }
 
-                else if (nodeType == "IBS.Utilities.ASMWSTester.NullablePrimitiveProperty")
+                else if (nodeType == "WebServiceStudio.NullablePrimitiveProperty")
                 {
                     if (((NullablePrimitiveProperty) treeNode.Tag).Name == "Dsn")
                     {
@@ -354,7 +354,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
 
                 switch (nodeType)
                 {
-                    case "IBS.Utilities.ASMWSTester.ClassProperty":
+                    case "WebServiceStudio.ClassProperty":
                         node1 = xmlDocument.CreateElement(((ClassProperty) treeNode.Tag).Name);
 
                         if (((ClassProperty) treeNode.Tag).ReadChildren() == null)
@@ -372,7 +372,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
                         }
 
                         break;
-                    case "IBS.Utilities.ASMWSTester.PrimitiveProperty":
+                    case "WebServiceStudio.PrimitiveProperty":
                         node1 = xmlDocument.CreateElement(((PrimitiveProperty) treeNode.Tag).Name);
 
                         node1.SetAttribute("value", ((PrimitiveProperty) treeNode.Tag).ReadChildren().ToString());
@@ -380,7 +380,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
 
                         xmlNode.AppendChild(node1);
                         break;
-                    case "IBS.Utilities.ASMWSTester.NullablePrimitiveProperty":
+                    case "WebServiceStudio.NullablePrimitiveProperty":
                         node1 = xmlDocument.CreateElement(((NullablePrimitiveProperty) treeNode.Tag).Name);
 
                         if (((NullablePrimitiveProperty) treeNode.Tag).ReadChildren() == null)
@@ -397,7 +397,7 @@ namespace IBS.Utilities.ASMWSTester.XmlConfig
 
                         xmlNode.AppendChild(node1);
                         break;
-                    case "IBS.Utilities.ASMWSTester.ArrayProperty":
+                    case "WebServiceStudio.ArrayProperty":
 
                         node1 = xmlDocument.CreateElement(((ArrayProperty) treeNode.Tag).Name);
 

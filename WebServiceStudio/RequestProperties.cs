@@ -9,7 +9,7 @@
 using System.Net;
 using System.Web.Services.Protocols;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     internal class RequestProperties
     {

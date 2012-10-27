@@ -11,7 +11,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public class SearchDialog : Form
     {

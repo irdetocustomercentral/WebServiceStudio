@@ -14,7 +14,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public partial class FindForm : Form
     {

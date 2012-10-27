@@ -11,7 +11,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     internal class ListStandardValues : TypeConverter
     {

@@ -11,10 +11,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly : AssemblyTitle("IBS.Utilities.ASMWSTester")]
+[assembly : AssemblyTitle("WebServiceStudio")]
 [assembly: AssemblyDescription("Web Service Studio For ASM")]
 [assembly : AssemblyConfiguration("")]
-[assembly : AssemblyProduct("IBS.Utilities.ASMWSTester")]
+[assembly : AssemblyProduct("WebServiceStudio")]
 [assembly : AssemblyTrademark("")]
 [assembly : AssemblyCulture("")]
 

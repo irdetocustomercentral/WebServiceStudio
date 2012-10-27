@@ -13,7 +13,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System;
 
-namespace IBS.Utilities.ASMWSTester.Http
+namespace WebServiceStudio.Http
 {
     public static class HttpHelper
     {

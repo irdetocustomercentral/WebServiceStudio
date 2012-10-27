@@ -11,7 +11,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     internal class DynamicConverter : TypeConverter
     {
@@ -19,7 +19,7 @@ namespace IBS.Utilities.ASMWSTester
         {
             converterTable = null;
             typeNotFoundMessage =
-                "ProxyPropertiesType {0} specified in IBS.Utilities.ASMWSTester.exe.options is not found";
+                "ProxyPropertiesType {0} specified in WebServiceStudio.exe.options is not found";
             converterTable = new Hashtable();
             converterTable[typeof (bool)] = Activator.CreateInstance(typeof (BooleanConverter));
             converterTable[typeof (byte)] = Activator.CreateInstance(typeof (ByteConverter));

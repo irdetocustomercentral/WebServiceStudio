@@ -8,7 +8,7 @@
 
 using System.IO;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     internal class NoCloseMemoryStream : MemoryStream
     {

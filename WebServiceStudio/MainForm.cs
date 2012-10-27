@@ -20,11 +20,11 @@ using System.Web.Services.Protocols;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
-using IBS.Utilities.ASMWSTester.BatchRun;
-using IBS.Utilities.ASMWSTester.Http;
-using IBS.Utilities.ASMWSTester.XmlConfig;
+using WebServiceStudio.BatchRun;
+using WebServiceStudio.Http;
+using WebServiceStudio.XmlConfig;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public partial class MainForm : Form
     {
@@ -193,10 +193,10 @@ namespace IBS.Utilities.ASMWSTester
         //    {
         //        switch (e.Node.Tag.GetType().ToString())
         //        {
-        //            case "IBS.Utilities.ASMWSTester.ClassProperty": e.Node.ImageIndex = 0; e.Node.SelectedImageIndex = 0; break;
-        //            case "IBS.Utilities.ASMWSTester.MethodProperty": e.Node.ImageIndex = 1; e.Node.SelectedImageIndex = 1; break;
-        //            case "IBS.Utilities.ASMWSTester.PrimitiveProperty":
-        //            case "IBS.Utilities.ASMWSTester.NullablePrimitiveProperty":
+        //            case "WebServiceStudio.ClassProperty": e.Node.ImageIndex = 0; e.Node.SelectedImageIndex = 0; break;
+        //            case "WebServiceStudio.MethodProperty": e.Node.ImageIndex = 1; e.Node.SelectedImageIndex = 1; break;
+        //            case "WebServiceStudio.PrimitiveProperty":
+        //            case "WebServiceStudio.NullablePrimitiveProperty":
         //                e.Node.ImageIndex = 2; e.Node.SelectedImageIndex = 2; break;
         //            default:
         //                e.Node.ImageIndex = -1; e.Node.SelectedImageIndex = -1; break;
@@ -597,11 +597,11 @@ namespace IBS.Utilities.ASMWSTester
             {
                 switch (tn.Tag.GetType().ToString())
                 {
-                    case "IBS.Utilities.ASMWSTester.ClassProperty": tn.ImageIndex = 0; tn.SelectedImageIndex = 0; break;
+                    case "WebServiceStudio.ClassProperty": tn.ImageIndex = 0; tn.SelectedImageIndex = 0; break;
                     case "System.Reflection.RuntimeMethodInfo":
-                    case "IBS.Utilities.ASMWSTester.MethodProperty": tn.ImageIndex = 1; tn.SelectedImageIndex = 1; break;
-                    case "IBS.Utilities.ASMWSTester.PrimitiveProperty":
-                    case "IBS.Utilities.ASMWSTester.NullablePrimitiveProperty":
+                    case "WebServiceStudio.MethodProperty": tn.ImageIndex = 1; tn.SelectedImageIndex = 1; break;
+                    case "WebServiceStudio.PrimitiveProperty":
+                    case "WebServiceStudio.NullablePrimitiveProperty":
                         tn.ImageIndex = 2; tn.SelectedImageIndex = 2; break;
                     default:
                         tn.ImageIndex = -1; tn.SelectedImageIndex = -1; break;
@@ -685,7 +685,8 @@ namespace IBS.Utilities.ASMWSTester
 
         private void menuItemAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, String.Format("ASMWSTester {0}", Application.ProductVersion), "About",
+            string MSG = "\n\nFor licensing details please see the following link\n" + "http://webservicestudio.codeplex.com/license";
+            MessageBox.Show(this, String.Format("ASMWSTester {0}{1}", Application.ProductVersion,MSG), "About",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
@@ -1759,7 +1760,7 @@ namespace IBS.Utilities.ASMWSTester
             {
                 string nodeType = treeNode.Tag.GetType().ToString();
 
-                if (nodeType == "IBS.Utilities.ASMWSTester.NullablePrimitiveProperty")
+                if (nodeType == "WebServiceStudio.NullablePrimitiveProperty")
                 {
                     if (((NullablePrimitiveProperty)treeNode.Tag).Name == "Dsn")
                     {
@@ -1891,7 +1892,7 @@ namespace IBS.Utilities.ASMWSTester
 
         //            switch (nodeType)
         //            {
-        //                case "IBS.Utilities.ASMWSTester.ArrayProperty":
+        //                case "WebServiceStudio.ArrayProperty":
         //                    //node1 = xmlDocument.CreateElement(((ArrayProperty)treeNode.Tag).Name);
 
         //                    string aa = XpathToPSMLogXpath(TreeNodeToXPath(treeNode.FullPath));

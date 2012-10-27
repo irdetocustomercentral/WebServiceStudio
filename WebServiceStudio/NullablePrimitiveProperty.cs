@@ -10,7 +10,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing.Design;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     internal class NullablePrimitiveProperty : ClassProperty
     {

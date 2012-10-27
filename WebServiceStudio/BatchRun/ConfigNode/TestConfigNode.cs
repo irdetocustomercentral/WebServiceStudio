@@ -8,7 +8,7 @@
 
 using System.Collections.Generic;
 
-namespace IBS.Utilities.ASMWSTester.BatchRun.ConfigNode
+namespace WebServiceStudio.BatchRun.ConfigNode
 {
     public class TestConfigNode : XmlConfigNodeBase
     {

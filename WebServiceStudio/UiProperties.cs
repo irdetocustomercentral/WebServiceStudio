@@ -10,7 +10,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Xml.Serialization;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     [TypeConverter(typeof (ExpandableObjectConverter))]
     public class UiProperties

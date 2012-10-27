@@ -6,7 +6,7 @@
 	//such as Irdeto's Customer Care input type of Base Query Request. 
 	
 
-namespace IBS.Utilities.ASMWSTester.BatchRun.ConfigNode
+namespace WebServiceStudio.BatchRun.ConfigNode
 {
     public class SetValueFieldConfigNode : XmlConfigNodeBase
     {

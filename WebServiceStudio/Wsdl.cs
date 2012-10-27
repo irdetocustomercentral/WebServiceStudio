@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 using Microsoft.CSharp;
 using Microsoft.VisualBasic;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public class Wsdl
     {

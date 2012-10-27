@@ -6,7 +6,7 @@
 	//such as Irdeto's Customer Care input type of Base Query Request. 
 	
 
-// Assembly IBS.Utilities.ASMWSTester, Version 0.0.0.0
+// Assembly WebServiceStudio, Version 0.0.0.0
 
 using System.Diagnostics;
 using System.Reflection;

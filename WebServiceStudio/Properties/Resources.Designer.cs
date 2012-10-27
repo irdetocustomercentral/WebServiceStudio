@@ -15,7 +15,7 @@ using System.Globalization;
 using System.Resources;
 using System.Runtime.CompilerServices;
 
-namespace IBS.Utilities.ASMWSTester.Properties
+namespace WebServiceStudio.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -49,7 +49,7 @@ namespace IBS.Utilities.ASMWSTester.Properties
                 if (ReferenceEquals(resourceMan, null))
                 {
                     ResourceManager temp =
-                        new ResourceManager("IBS.Utilities.ASMWSTester.Properties.Resources",
+                        new ResourceManager("WebServiceStudio.Properties.Resources",
                                             typeof (Resources).Assembly);
                     resourceMan = temp;
                 }
@@ -72,7 +72,7 @@ namespace IBS.Utilities.ASMWSTester.Properties
         {
             get
             {
-                object obj = ResourceManager.GetObject("IBS.Utilities.ASMWSTester", resourceCulture);
+                object obj = ResourceManager.GetObject("WebServiceStudio", resourceCulture);
                 return ((Icon) (obj));
             }
         }

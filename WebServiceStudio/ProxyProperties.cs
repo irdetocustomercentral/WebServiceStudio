@@ -11,14 +11,14 @@ using System.Collections;
 using System.Net;
 using System.Web.Services.Protocols;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     internal class ProxyProperties
     {
         static ProxyProperties()
         {
             typeNotFoundMessage =
-                "ProxyPropertiesType {0} specified in IBS.Utilities.ASMWSTester.exe.options is not found";
+                "ProxyPropertiesType {0} specified in WebServiceStudio.exe.options is not found";
         }
 
         public ProxyProperties()

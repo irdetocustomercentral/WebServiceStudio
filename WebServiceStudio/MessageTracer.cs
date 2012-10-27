@@ -11,7 +11,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     internal class MessageTracer
     {

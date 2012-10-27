@@ -8,7 +8,7 @@
 
 using System.Windows.Forms;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public class XmlTreeNode : TreeNode
     {

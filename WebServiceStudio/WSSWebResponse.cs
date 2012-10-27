@@ -11,7 +11,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-namespace IBS.Utilities.ASMWSTester
+namespace WebServiceStudio
 {
     public class WSSWebResponse : WebResponse
     {
