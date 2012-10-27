@@ -256,97 +256,104 @@ namespace IBS.Utilities.ASMWSTester
 
         public void buttonInvoke_Click(object sender, EventArgs e)
         {
-            //if (treeMethods.Nodes.Count == 0)
-            //{
-            //    return;
-            //}
-
-            //if (treeMethods.SelectedNode == null)
-            //{
-            //    return;
-            //}
-
-            if (wsdl.Paths.Count > 0)
+            try
             {
-                if (wsdl.Paths[0] != textEndPointUri.Text)
+                //if (treeMethods.Nodes.Count == 0)
+                //{
+                //    return;
+                //}
+
+                //if (treeMethods.SelectedNode == null)
+                //{
+                //    return;
+                //}
+
+                if (wsdl.Paths.Count > 0)
+                {
+                    if (wsdl.Paths[0] != textEndPointUri.Text)
+                    {
+                        DialogResult result = MessageBox.Show("Use new WSDL EndPoint and get assembly ?", "Confirm",
+                                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            GetAssembly(false);
+                        }
+                    }
+                }
+                else
                 {
                     DialogResult result = MessageBox.Show("Use new WSDL EndPoint and get assembly ?", "Confirm",
-                                                          MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {
                         GetAssembly(false);
                     }
                 }
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show("Use new WSDL EndPoint and get assembly ?", "Confirm",
-                                          MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (result == DialogResult.Yes)
+                int invokeTimes;
+
+                if (!int.TryParse(txtInvokeTimes.Text, out invokeTimes))
                 {
-                    GetAssembly(false);
+                    MessageBox.Show("Invoke Times must be a int!");
+                    return;
                 }
-            }
-
-            int invokeTimes;
-
-            if (!int.TryParse(txtInvokeTimes.Text, out invokeTimes))
-            {
-                MessageBox.Show("Invoke Times must be a int!");
-                return;
-            }
 
 
-            for (int i = 0; i < invokeTimes; i++)
-            {
-                lastInvokeError = String.Empty;
-                Cursor cursor1 = Cursor;
-                Cursor = Cursors.WaitCursor;
-                try
+                for (int i = 0; i < invokeTimes; i++)
                 {
-                    if (lastDocument.ChildNodes.Count > 0 && treeInput.Nodes.Count == 0)
+                    lastInvokeError = String.Empty;
+                    Cursor cursor1 = Cursor;
+                    Cursor = Cursors.WaitCursor;
+                    try
                     {
-                        OuterRunHelper.ClickNode(mainForm.treeMethods, mainForm.treeMethods.Nodes[0], lastDocument.ChildNodes[0].Name, mainForm);
+                        if (lastDocument.ChildNodes.Count > 0 && treeInput.Nodes.Count == 0)
+                        {
+                            OuterRunHelper.ClickNode(mainForm.treeMethods, mainForm.treeMethods.Nodes[0], lastDocument.ChildNodes[0].Name, mainForm);
+
+                            if (treeInput.Nodes.Count > 0)
+                            {
+                                XmlCongifManager.ApplyConfig(treeInput.Nodes[0], String.Empty, lastDocument, wsdl.ProxyAssembly);
+                            }
+
+                        }
 
                         if (treeInput.Nodes.Count > 0)
                         {
-                            XmlCongifManager.ApplyConfig(treeInput.Nodes[0], String.Empty, lastDocument, wsdl.ProxyAssembly);
+
+                            propOutput.SelectedObject = null;
+                            treeOutput.Nodes.Clear();
+
+                            SetCurrentValue(treeInput.Nodes[0]);
+
+                            InvokeWebMethod();
+
+                            lastDocument = new XmlDocument();
+                            XmlCongifManager.ReadConfig(treeInput.Nodes[0], null, ref lastDocument);
+
+                            if (btnStart.Text == "Stop")
+                            {
+                                BatchRunCongifFileHelper.CreateConfig(treeMethods.SelectedNode.Text, treeInput.Nodes[0]);
+                                BatchRunCongifFileHelper.CreateRun(treeMethods.SelectedNode.Text,
+                                                                   treeMethods.SelectedNode.Text + ".xml");
+                            }
                         }
-
                     }
-
-                    if (treeInput.Nodes.Count > 0)
+                    catch (Exception ex)
                     {
-
-                        propOutput.SelectedObject = null;
-                        treeOutput.Nodes.Clear();
-
-                        SetCurrentValue(treeInput.Nodes[0]);
-
-                        InvokeWebMethod();
-
-                        lastDocument = new XmlDocument();
-                        XmlCongifManager.ReadConfig(treeInput.Nodes[0], null, ref lastDocument);
-
-                        if (btnStart.Text == "Stop")
-                        {
-                            BatchRunCongifFileHelper.CreateConfig(treeMethods.SelectedNode.Text, treeInput.Nodes[0]);
-                            BatchRunCongifFileHelper.CreateRun(treeMethods.SelectedNode.Text,
-                                                               treeMethods.SelectedNode.Text + ".xml");
-                        }
+                        lastInvokeError = ex.ToString();
+                        throw ex;
+                    }
+                    finally
+                    {
+                        Cursor = cursor1;
                     }
                 }
-                catch (Exception ex)
-                {
-                    lastInvokeError = ex.ToString();
-                    throw ex;
-                }
-                finally
-                {
-                    Cursor = cursor1;
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -741,7 +748,7 @@ namespace IBS.Utilities.ASMWSTester
 
         private void menuItemHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, "ASMWSTester - Powered by BSS Shanghai 2008"); //MiniHelpText);
+            MessageBox.Show(this, "Web Service Tester"); //MiniHelpText);
         }
 
         //private void menuItemOpen_Click(object sender, EventArgs e)
@@ -1758,14 +1765,19 @@ namespace IBS.Utilities.ASMWSTester
                     {
                         if (Configuration.MasterConfig.AuthenticationHeaderSettings.Dsn != "")
                         {
-                            currentDsn = ((NullablePrimitiveProperty)treeNode.Tag).Value.ToString();
+                            if (((NullablePrimitiveProperty)treeNode.Tag).Value != null)
+                            {
+                                currentDsn = ((NullablePrimitiveProperty)treeNode.Tag).Value.ToString();
+                            }
+                            
                         }
                     }
                     else if (((NullablePrimitiveProperty)treeNode.Tag).Name == "UserName")
                     {
                         if (Configuration.MasterConfig.AuthenticationHeaderSettings.UserName != "")
                         {
-                            currentUserName = ((NullablePrimitiveProperty)treeNode.Tag).Value.ToString();
+                            if (((NullablePrimitiveProperty)treeNode.Tag).Value != null)
+                                currentUserName = ((NullablePrimitiveProperty)treeNode.Tag).Value.ToString();
                         }
                     }
                 }
